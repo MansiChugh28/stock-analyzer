@@ -77,8 +77,8 @@ const LoginPage: React.FC = () => {
   const location = useLocation();
   const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("test@gmail.com")
+  const [password, setPassword] = useState("12345678")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
