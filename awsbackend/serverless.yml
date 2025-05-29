@@ -1,0 +1,19 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: scriptspace
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: stockanalyser
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage, 'dev'}
+  region: ap-south-1
+
+functions:
+  app:
+    handler: handler.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true
